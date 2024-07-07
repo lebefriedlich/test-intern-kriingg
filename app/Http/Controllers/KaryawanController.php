@@ -54,6 +54,7 @@ class KaryawanController extends Controller
         $id = Crypt::decrypt($id);
 
         $data = PengajuanPembelian::with('user')->find($id);
+        Carbon::setLocale('id');
 
         return view('dashboard.karyawan.cetak', compact('data'));
     }
